@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.example.android.spinner.MainActivity">
+<!-- match_parent - which means that the view wants to be as big as its parent (minus padding)-->
+
+<!-- wrap_content - which means that the view wants to be just big enough to enclose its content (plus padding)-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Options"
+        android:textSize="25sp"
+        android:id="@+id/textView1"/>
+    <Spinner
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:entries="@array/Gender" />
+<!-- android:entries="@array/Gender" - spinner võtab values/strings.xml failist lisatud masiivi. Kui seda ei lisa siis ei kuva spinner loetelu valikuid - -->
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/android"
+        android:layout_marginTop="22dp"
+        android:text="Next" />
+<!-- android:layout_below="@+id/android" - nupu asukoht on teise spinner all -->
+    <Spinner
+        android:id="@+id/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/gender"
+        android:layout_below="@+id/gender"
+        android:layout_marginTop="13dp"
+        android:entries="@array/Android_Version" />
+    <!-- android:entries="@array/Android_version" - spinner võtab values/strings.xml failist lisatud masiivi. Kui seda ei lisa siis ei kuva spinner loetelu valikuid - -->
+</RelativeLayout>
